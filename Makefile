@@ -1,12 +1,12 @@
 build:
-	docker build -t ictatrti/tangerine .
+	docker build -t adam704a/tangerine .
 
 run-container:
 	# hostPort:containerPort
-	docker run -p 49160:80 --name tangerine -d ictatrti/tangerine
+	docker run --name tangerine -d adam704a/tangerine
 
 inspect:
-	docker run -i -t ictatrti/tangerine /bin/bash
+	docker run -i -t adam704a/tangerine /bin/bash
 
 test:
 	curl $(boot2docker ip):49160
@@ -14,5 +14,4 @@ test:
 clean:
 	docker stop tangerine
 	docker rm tangerine
-	docker rm $(docker ps -a -q)
 

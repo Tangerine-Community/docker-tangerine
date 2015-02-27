@@ -37,7 +37,7 @@ server {
 
  # robbert
   location ^~ /robbert {
-    alias /www/robbert;
+    alias /opt/app/robbert;
     index index.php;
     location ~* \.php {
       fastcgi_pass unix:/var/run/php5-fpm.sock;
